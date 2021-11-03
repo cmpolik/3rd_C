@@ -1,0 +1,39 @@
+_____________________________________________________________________________________________________________________________________
+10) 	Написать inotify (не так сложно как в терминале) (читай весь man) 	
+	(advanced linux programming - book там есть примеров задачи может быть и из тех что в ДЗ)
+	inotify, fanotify читать разницу!!! (dnotify - устарелый) (то что читаем это может спрашиваться на зачете)`
+11)  	прочитать разницу м/у lockf и flock.
+				
+	идентификаторы		PID - process identifier(ID)
+				PPID - parent PID
+				UID - usser ID
+				GIP - group ID
+				PGID			// зач
+				SID			// зач (читать)
+				
+				ps - команда баш читать (показывает тек. процессы)
+12)	credentials читать man
+	capabilities доп. права // 
+	SELinuxlabel
+	
+	для задачи зитать (cat proc
+	
+13) 	waitpid wait...
+
+
+_____________________________________________________________________________________________
+				
+				
+				
+				6.1  opendir/readdir/lstat/closedir
+				6.2  opendir/dirfd/fstatat/readdir/closedir
+				6.3  open/getdents/fstatat/close
+				6.4  recursive 6.2
+				7.1  copy dir: openat/mkdirat/...
+				7.2  
+				
+				
+				
+				10   inotify(7)
+				11
+				12

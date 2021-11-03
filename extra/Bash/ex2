@@ -1,0 +1,7 @@
+#!/bin/bash
+
+myperem=3
+other=" stroka ␣ long ␣ long "
+PATH=$PATH:/home/secretdir
+echo $myperem$other
+
