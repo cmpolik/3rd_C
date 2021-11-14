@@ -26,6 +26,8 @@ dprintf(fd, %s, arg[2]);
 3* lstat просто файл копируем, каталог не умеем, и тд mknod/mkfifo/symlink/readlink
 4) fchmod\futimens Задача 3 + сохранение + копирование прав доступа (f chmod) attime + mtime (futimens)
 
+
+
 Еще конспект.................................
 что-то о 3.1 /отдельный цикл около write один вложенный цикл в котором вызываются функции/ cyclomatic complexity про сложность алгоритма/ думать об упрощении
 STAT / почему бы и не ссылаться на man/ char buf[sizeof("yyyy.mm.dd hh:mm:ss")];		f(buf, sizeof(buf)); / strftime вместо ctime и ctime_r /
@@ -34,6 +36,11 @@ STAT / почему бы и не ссылаться на man/ char buf[sizeof("y
 man 2 mknode ||  man mkdir to copy the empty directory. FIFO/pipe?  MKFIFO  S_LINK (2 действия читаем и создаем) readlink - читает содержимое символической ссылки. Какого размера буфер? стандарт: limits. h - тогда есть константа PATH_MAX (usefull), SYNLINK_MAX (very usefull have 0? we think yes or +1 ), take readlink| give sizeof(buf)| give link and get number of byte we have  written | %.*s (we unknown smth *) создаем с помощью simlink что и куда.
 зачем-то речь о восьмеричных числах. теперь что-то о мягких и жестких ссылках.
 futimens(fd, (struct timespec[]), ({sb.st_atime, sb. st_mtime})) ?????
+
+
+
+
+
 Задача 4 используя те штуки (fchmode) сделать у результата такие же права как и оригинала ( это задача 3 + копирование части метаданнных)
 Задача 5// мы не научились сохранять индентификатор владельца и группы владельца  (man 2 CHOWN) st_uid st_gid  chown\fchown (reflink) (rsync по сети программа) да давайте обработку жестких ссылок
 (Если решать по уму, нужно копировать файлы быстро, значит копировать несколько потоков аааааааааааааааа да да анесколько потоков  да да копировать по сети НЕТ) hardlink +ACLs (-a) // NFS v 4
